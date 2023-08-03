@@ -15,10 +15,13 @@ body{
 .city{
     font-family: sans-serif;
     display: flex;
-    justify-content: space-between;
     margin: 20px 0;
+    justify-content: space-between;
     padding: 20px 0;
-    border-bottom: 1px dashed (0, 0, 0, 0.2);
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+}
+.city:last-child{
+    border: none;
 }
 .date{
     margin: 0 0 5px;
