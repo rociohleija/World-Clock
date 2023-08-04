@@ -1,12 +1,25 @@
 function updateTime(){
- let houstonElement= document.querySelector("#houston");
- if (houstonElement) {
-    let houstonDateElement= houstonElement.querySelector(".date");
-    let houstonTimeElement= houstonElement.querySelector(".time");
-    let houstonTime = moment().tz("US/Central");
+  let sanLuisPotosíElement= document.querySelector("#san-luis-potosí");
+  if (sanLuisPotosíElement) {
+     let sanLuisPotosíDateElement= sanLuisPotosíElement.querySelector(".date");
+     let sanLuisPotosíTimeElement= sanLuisPotosíElement.querySelector(".time");
+     let sanLuisPotosíTime = moment().tz("Mexico/BajaSur");
+ 
+ sanLuisPotosíDateElement.innerHTML = sanLuisPotosíTime.format("MMMM Do YYYY");
+ sanLuisPotosíTimeElement.innerHTML = sanLuisPotosíTime.format(
+     "h:mm:ss [<small>]A[</small>]"
+   ); 
+ }
+  
 
-houstonDateElement.innerHTML = houstonTime.format("MMMM Do YYYY");
-houstonTimeElement.innerHTML = houstonTime.format(
+ let suvaElement= document.querySelector("#suva");
+ if (suvaElement) {
+    let suvaDateElement= suvaElement.querySelector(".date");
+    let suvaTimeElement= suvaElement.querySelector(".time");
+    let suvaTime = moment().tz("Pacific/Fiji");
+
+suvaDateElement.innerHTML = suvaTime.format("MMMM Do YYYY");
+suvaTimeElement.innerHTML = suvaTime.format(
     "h:mm:ss [<small>]A[</small>]"
   ); 
 }
@@ -21,6 +34,17 @@ kualaLumpurTimeElement.innerHTML = kualaLumpurTime.format(
     "h:mm:ss [<small>]A[</small>]"
   );
  }
+ let valenciaElement= document.querySelector("#valencia");
+ if (valenciaElement) {
+    let valenciaDateElement= valenciaElement.querySelector(".date");
+    let valenciaTimeElement= valenciaElement.querySelector(".time");
+    let valenciaTime = moment().tz("CET");
+
+valenciaDateElement.innerHTML = valenciaTime.format("MMMM Do YYYY");
+valenciaTimeElement.innerHTML = valenciaTime.format(
+   "h:mm:ss [<small>]A[</small>]"
+ );
+}
 } 
 function updateCity(event) {
     let cityTimeZone = event.target.value;
@@ -40,6 +64,7 @@ function updateCity(event) {
       "A"
     )}</small></div>
     </div>
+    <a href="/">All cities</a>
     `;
   } 
 updateTime();
