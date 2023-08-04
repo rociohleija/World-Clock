@@ -6,7 +6,7 @@ function updateTime(){
     let houstonTime = moment().tz("US/Central");
 
 houstonDateElement.innerHTML = houstonTime.format("MMMM Do YYYY");
-houstonTimeElement.innerHTML = houston.format(
+houstonTimeElement.innerHTML = houstonTime.format(
     "h:mm:ss [<small>]A[</small>]"
   ); 
 }
@@ -16,7 +16,7 @@ houstonTimeElement.innerHTML = houston.format(
      let kualaLumpurTimeElement= kualaLumpurElement.querySelector(".time");
      let kualaLumpurTime = moment().tz("Asia/Kuala_Lumpur");
 
-kualaLumpurDateElement.innerHTML = kualaLumpur.format("MMMM Do YYYY");
+kualaLumpurDateElement.innerHTML = kualaLumpurTime.format("MMMM Do YYYY");
 kualaLumpurTimeElement.innerHTML = kualaLumpurTime.format(
     "h:mm:ss [<small>]A[</small>]"
   );
@@ -38,7 +38,7 @@ function updateCity(event) {
     )}</small></div>
     </div>
     `;
-  }
+  } 
 updateTime();
 setInterval(updateTime, 1000);
 
